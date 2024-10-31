@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おみくじ3</title>
+    <style>
+        .active {
+            transform: rotateY(2700deg);
+        }
+
+        #result {
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">占う</button>
+    <p><img id="result" src="https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/omikuji.png" alt=""></p>
+    <p id="number">0</p>
+    <p id="message">何か一言が表示されます。</p>
+
+    <script>
+
+        const btn = document.getElementById('btn');
+        const result = document.getElementById('result');
+        const message = document.getElementById('message');
+        const number = document.getElementById('number')
+        const path = 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji';
+
+        btn.addEventListener('click', function () {
+            const num = Math.floor(Math.random() * 5);
+
+            switch (num) {
+                case 0:
+                    result.setAttribute('src', `${path}/daikichi.png`);
+                    message.innerHTML = 'ぶちあげよ';
+                    break;
+
+                case 1:
+                    result.setAttribute('src', `${path}/chuukichi.png`);
+                    message.innerHTML = '1日24時間って普通に足りないの';
+                    break;
+
+                case 2:
+                    result.setAttribute('src', `${path}/syoukichi.png`);
+                    message.innerHTML = '可もなく不可もなくが一番難しいわょね';
+                    break;
+
+                case 3:
+                    result.setAttribute('src', `${path}/kyou.png`);
+                    message.innerHTML = 'とりあえずギャルマインドを手に入れなさい';
+                    break;
+
+                case 4:
+                    result.setAttribute('src', `${path}/daikyou.png`);
+                    message.innerHTML = 'いいことなさすぎてもはや楽しい1日ね';
+                    break;
+
+                default:
+                    console.log('エラー');
+                    break;
+            }
+
+            result.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
