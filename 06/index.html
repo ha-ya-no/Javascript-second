@@ -8,19 +8,34 @@
 </head>
 
 <body>
-    <p id="hoge" class="hoge piyo">a</p>
+    <!-- <p id="hoge" class="hoge piyo">a</p> -->
     <script>
-        const fruits = ['apple', 'banana', 'orange']
-        console.log(fruits[2]);
+        // const fruits = ['apple', 'banana', 'orange'];
 
-        fruits[1] = 'peach';
-        console.log(fruits);
-        fruits[3] = 'grape';
-        console.log(fruits.length);
-        console.log(fruits[fruits.length - 1]);
+        // for (let i = 0; i < fruits.length;) {
+        //     console.log(`${i}番目の値は、${fruits[i]}です。`);
+        // }
 
-        const empty = [];
-        console.log(empty);
+        const num = [5, 10, 15, 20, 25, 30];
+
+        let sum = 0;
+        for (let i = 1; i < num.length - 1; i++) {
+            sum += num[i];
+        }
+        console.log(sum);
+
+
+        // const fruits = ['apple', 'banana', 'orange']
+        // console.log(fruits[2]);
+
+        // fruits[1] = 'peach';
+        // console.log(fruits);
+        // fruits[3] = 'grape';
+        // console.log(fruits.length);
+        // console.log(fruits[fruits.length - 1]);
+
+        // const empty = [];
+        // console.log(empty);
     </script>
 </body>
 
